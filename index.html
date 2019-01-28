@@ -1,66 +1,46 @@
 <!DOCTYPE html>
 <html lang="ang" dir="ltr">
 
-<head>
-    <meta charset="utf-8">
-    <title>ViewConstructor</title>
+    <head>
+        <meta charset="utf-8">
+        <title>ViewConstructor</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+        <link rel="icon" href="icon/favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="jquery-ui/jquery-ui.js"></script>
+    <body>
+        <div class="header">
+                <div id="logo">View<span id="player">Constructor</span>
+                <div id ="png"><img src="png/viewconstructor.png"></div>
+                <div id="sup">write your code and check what you're typing!</div>
+            </div>
 
-    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
-	
-	<link rel="icon" href="icon/favicon.ico">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-
-<body>
-
-    <div class="header">
-			<div id="logo">View<span id="player">Constructor</span>
-			<div id ="png"><img src="png/viewconstructor.png"></div>
-            <div id="sup">write your code and check what you're typing!</div>
+            <div id="buttonContainer">
+                <div class="toggleButton active" id="html">HTML</div>
+                <div class="toggleButton" id="css">CSS</div>
+                <div class="toggleButton" id="javascript">JAVASCRIPT</div>
+                <div class="toggleButton active" id="output">OUTPUT</div>
+            </div>
         </div>
+        <div id="bodyContainer" contenteditable="true">
+            <textarea id="htmlPanel" class="panel">
+                <p id="paragraph">
+                    "remove a (') tag at the end of a sentencje in the JavaScript section to see this text in the output"
+                </p>
+            </textarea>
 
-        <div id="buttonContainer">
-
-            <div class="toggleButton active" id="html">HTML</div>
-            <div class="toggleButton" id="css">CSS</div>
-            <div class="toggleButton" id="javascript">JAVASCRIPT</div>
-            <div class="toggleButton active" id="output">OUTPUT</div>
-
+            <textarea id="cssPanel" class="panel hidden">
+                p{color: green; margin:100px 100px;} p:hover{font-size: 20px; transform: rotate(40deg) translateX(10px);}
+            </textarea>
+            <textarea id="javascriptPanel" class="panel hidden">
+                document.getElementById("paragraph").innerHTML = 'Hello Everyone There! + "p"';
+            </textarea>
+                <iframe id="outputPanel" class="panel">See what you're typing</iframe>
         </div>
-
-    </div>
-
-    <div id="bodyContainer" contenteditable="true">
-
-<textarea id="htmlPanel" class="panel">
-<p id="paragraph">
-
-"remove a (') tag at the end of a sentencje in the JavaScript section to see this text in the output"
-
-</p>
-</textarea>
-
-<textarea id="cssPanel" class="panel hidden">
-p{color: green; margin:100px 100px;} p:hover{font-size: 20px; transform: rotate(40deg) translateX(10px);}
-
-</textarea>
-
-
-        <textarea id="javascriptPanel" class="panel hidden">document.getElementById("paragraph").innerHTML = 'Hello Everyone There! + "p"';</textarea>
-
-        <iframe id="outputPanel" class="panel">See what you're typing</iframe>
-
-
-    </div>
-
-    <script src="script.js"></script>
-
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>
